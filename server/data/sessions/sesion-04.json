@@ -1,0 +1,111 @@
+{
+  "title": "Cálculo de ensanchamiento y tasa de datos",
+  "description": "Ensanchamiento de pulsos, tasa máxima y longitud máxima del enlace.",
+  "shuffleQuestions": true,
+  "questions": [
+    {
+      "prompt": "Dos efectos de dispersión independientes producen anchos rms σ₁ y σ₂. ¿Cómo se combinan para obtener el ancho total?",
+      "options": [
+        {
+          "id": "a",
+          "text": "En cuadratura: σ_total = √(σ₁² + σ₂²)"
+        },
+        {
+          "id": "b",
+          "text": "Linealmente: σ_total = σ₁ + σ₂"
+        },
+        {
+          "id": "c",
+          "text": "Se toma siempre el menor de los dos"
+        },
+        {
+          "id": "d",
+          "text": "Se multiplican: σ_total = σ₁·σ₂"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Al ser efectos independientes y estadísticos, se suman las varianzas, no las desviaciones. Por eso, si uno domina (por ejemplo, el modal), el otro casi no cambia el total."
+    },
+    {
+      "type": "calc",
+      "prompt": "Con el criterio B_max = 1 / (2·Δτ), ¿qué tasa de datos máxima admite un enlace monomodo cuyo ensanchamiento cromático es Δτ = 136 ps?",
+      "unit": "Gb/s",
+      "answer": 3.676470588,
+      "decimals": 2,
+      "hint": "Convierte 136 ps a segundos: 136×10⁻¹² s.",
+      "solution": [
+        "B_max = 1 / (2·Δτ).",
+        "B_max = 1 / (2 × 136×10⁻¹² s) ≈ 3,68×10⁹ bit/s.",
+        "B_max ≈ 3,68 Gb/s."
+      ]
+    },
+    {
+      "type": "calc",
+      "prompt": "Un sistema de 10 Gb/s usa un láser con Δλ = 0,1 nm sobre fibra con D = 17 ps/(nm·km). Con el criterio Δτ ≤ 1/(2B), ¿cuál es la longitud máxima del enlace limitada solo por dispersión cromática?",
+      "unit": "km",
+      "answer": 29.41176471,
+      "decimals": 1,
+      "tolerancePercent": 3,
+      "hint": "Primero calcula el ensanchamiento máximo permitido Δτ_máx = 1/(2B).",
+      "solution": [
+        "Δτ_máx = 1 / (2B) = 1 / (2 × 10×10⁹ s⁻¹) = 50 ps.",
+        "Ensanchamiento por km: D·Δλ = 17 × 0,1 = 1,7 ps/km.",
+        "L_máx = 50 ps / 1,7 ps/km ≈ 29,4 km."
+      ]
+    },
+    {
+      "type": "calc",
+      "prompt": "Un enlace tiene un ancho rms intermodal σ_mod = 3 ns y un ancho rms cromático σ_cro = 4 ns. ¿Cuál es el ancho rms total?",
+      "unit": "ns",
+      "answer": 5,
+      "decimals": 1,
+      "hint": "σ_total = √(σ_mod² + σ_cro²).",
+      "solution": [
+        "σ_total = √(σ_mod² + σ_cro²).",
+        "σ_total = √(3² + 4²) ns = √(9 + 16) ns = √25 ns.",
+        "σ_total = 5,0 ns (y no 7 ns, que sería la suma lineal)."
+      ]
+    },
+    {
+      "type": "calc",
+      "prompt": "Un pulso se ensancha 255 ps tras recorrer 15 km de fibra con una fuente de ancho espectral Δλ = 1 nm. ¿Cuánto vale el coeficiente de dispersión D de la fibra?",
+      "unit": "ps/(nm·km)",
+      "answer": 17,
+      "decimals": 1,
+      "hint": "Despeja D de Δτ = D·L·Δλ.",
+      "solution": [
+        "De Δτ = D·L·Δλ se despeja D = Δτ / (L·Δλ).",
+        "D = 255 ps / (15 km × 1 nm).",
+        "D = 17,0 ps/(nm·km): el valor típico de una fibra estándar en 1550 nm."
+      ]
+    },
+    {
+      "type": "calc",
+      "prompt": "Un enlace de 40 km usa un láser con Δλ = 0,5 nm sobre fibra con D = 17 ps/(nm·km). Con el criterio B_max = 1 / (2·Δτ), ¿qué tasa de datos máxima admite?",
+      "unit": "Gb/s",
+      "answer": 1.470588235,
+      "decimals": 2,
+      "tolerancePercent": 3,
+      "hint": "Primero Δτ = D·L·Δλ; luego B_max = 1/(2Δτ).",
+      "solution": [
+        "Δτ = D·L·Δλ = 17 × 40 × 0,5 ps = 340 ps.",
+        "B_max = 1 / (2 × 340×10⁻¹² s) ≈ 1,47×10⁹ bit/s.",
+        "B_max ≈ 1,47 Gb/s."
+      ]
+    },
+    {
+      "type": "calc",
+      "prompt": "Para transmitir 2,5 Gb/s sobre 100 km de fibra con D = 17 ps/(nm·km) y el criterio Δτ ≤ 1/(2B), ¿cuál es el ancho espectral máximo admisible de la fuente?",
+      "unit": "nm",
+      "answer": 0.1176470588,
+      "decimals": 3,
+      "tolerancePercent": 3,
+      "hint": "Δτ_máx = 1/(2B); luego Δλ_máx = Δτ_máx / (D·L).",
+      "solution": [
+        "Δτ_máx = 1 / (2 × 2,5×10⁹ s⁻¹) = 200 ps.",
+        "Δλ_máx = Δτ_máx / (D·L) = 200 ps / (17 ps/(nm·km) × 100 km).",
+        "Δλ_máx ≈ 0,118 nm: se necesita un láser de ancho espectral muy estrecho."
+      ]
+    }
+  ]
+}

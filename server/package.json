@@ -1,0 +1,17 @@
+{
+  "name": "fiber-dispersion-qa-server",
+  "version": "1.0.0",
+  "description": "Servidor de la app de dispersión en fibra óptica (uso en intranet)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "validate": "node validate.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "fiber-dispersion-qa",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  "forwardPorts": [
+    3000,
+    8080
+  ],
+  "portsAttributes": {
+    "3000": {
+      "label": "Dispersión en Fibra — servidor API"
+    },
+    "8080": {
+      "label": "Dispersión en Fibra — cliente (previsualización en navegador)"
+    }
+  },
+  "postCreateCommand": "cd server && npm install && cd ../client && npm install",
+  "remoteEnv": {
+    "ANDROID_HOME": "/opt/android-sdk",
+    "ANDROID_SDK_ROOT": "/opt/android-sdk"
+  }
+}

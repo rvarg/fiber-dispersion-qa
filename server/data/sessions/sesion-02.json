@@ -1,0 +1,180 @@
+{
+  "title": "Dispersión intermodal",
+  "description": "Rayos y modos de distinto recorrido en fibras multimodo.",
+  "shuffleQuestions": true,
+  "questions": [
+    {
+      "prompt": "¿Cuál es el origen de la dispersión intermodal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Los distintos modos (o rayos) recorren caminos de diferente longitud y llegan al final en tiempos distintos"
+        },
+        {
+          "id": "b",
+          "text": "La variación del índice de refracción con la longitud de onda"
+        },
+        {
+          "id": "c",
+          "text": "La birrefringencia aleatoria de la fibra"
+        },
+        {
+          "id": "d",
+          "text": "La anchura espectral de la fuente óptica"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Un pulso de luz reparte su energía entre varios modos. Cada modo avanza con un retardo propio, por lo que el pulso se ensancha. Las otras opciones describen la dispersión cromática y la PMD."
+    },
+    {
+      "prompt": "En el esquema, los rayos A y B entran a la vez en una fibra multimodo de índice escalonado. ¿Cuál llega primero al final?",
+      "image": {
+        "url": "img/rayos-intermodal.svg",
+        "alt": "Fibra multimodo de índice escalonado vista de lado, con núcleo central y revestimiento arriba y abajo. El rayo A viaja en línea recta por el eje. El rayo B avanza en zigzag, reflejándose en las paredes del núcleo. Ambos entran juntos por la izquierda",
+        "caption": "Dos rayos que entran al mismo tiempo en una fibra multimodo de índice escalonado. Esquema cualitativo, ilustración propia."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "El rayo A, porque recorre el camino más corto (por el eje)"
+        },
+        {
+          "id": "b",
+          "text": "El rayo B, porque va más rápido al reflejarse"
+        },
+        {
+          "id": "c",
+          "text": "Llegan al mismo tiempo, porque el índice del núcleo es el mismo"
+        },
+        {
+          "id": "d",
+          "text": "No se puede saber sin conocer la longitud de onda"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "En un núcleo de índice uniforme todos los rayos viajan a la misma velocidad (c/n₁). El rayo en zigzag recorre un camino geométrico más largo y por eso llega después; esa diferencia es el ensanchamiento intermodal."
+    },
+    {
+      "prompt": "¿Por qué una fibra multimodo de índice gradual tiene mucha menos dispersión intermodal que una de índice escalonado?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Porque los rayos de camino más largo pasan por zonas de menor índice, viajan más rápido y compensan el recorrido extra"
+        },
+        {
+          "id": "b",
+          "text": "Porque su núcleo es más pequeño y solo admite un modo"
+        },
+        {
+          "id": "c",
+          "text": "Porque el revestimiento absorbe los modos de orden alto"
+        },
+        {
+          "id": "d",
+          "text": "Porque trabaja a una longitud de onda mayor"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "En el perfil gradual el índice disminuye del eje hacia el revestimiento, de modo que los rayos que se alejan del eje aceleran. Los tiempos de llegada de los distintos modos se igualan bastante."
+    },
+    {
+      "prompt": "¿Por qué la fibra monomodo no presenta dispersión intermodal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Porque solo propaga un modo, así que no hay diferencias de retardo entre modos"
+        },
+        {
+          "id": "b",
+          "text": "Porque su índice de refracción es constante"
+        },
+        {
+          "id": "c",
+          "text": "Porque su atenuación es menor"
+        },
+        {
+          "id": "d",
+          "text": "Porque trabaja siempre en 1550 nm"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Sin varios modos no hay diferencias entre caminos. En la fibra monomodo la dispersión que queda es la cromática y, en menor medida, la PMD."
+    },
+    {
+      "prompt": "En una fibra multimodo de índice escalonado, ¿qué parámetro determina principalmente el ensanchamiento intermodal por kilómetro?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La diferencia relativa de índices Δ entre el núcleo y el revestimiento"
+        },
+        {
+          "id": "b",
+          "text": "El diámetro exterior del revestimiento"
+        },
+        {
+          "id": "c",
+          "text": "La longitud de onda de la fuente"
+        },
+        {
+          "id": "d",
+          "text": "El coeficiente PMD"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "El retardo entre el rayo más lento y el más rápido es Δτ ≈ L·n₁·Δ/c: crece con la longitud y con Δ. Un Δ menor reduce el ensanchamiento (y también el número de modos y la apertura numérica)."
+    },
+    {
+      "type": "calc",
+      "prompt": "Una fibra multimodo de índice escalonado de 1 km tiene n₁ = 1,48 y Δ = 1 % (0,01). Usa Δτ = L·n₁·Δ / c, con c = 3×10⁸ m/s. ¿Cuál es el ensanchamiento por dispersión intermodal?",
+      "unit": "ns",
+      "answer": 49.33333333,
+      "decimals": 1,
+      "hint": "Pon la longitud en metros: L = 1000 m.",
+      "solution": [
+        "Δτ = L·n₁·Δ / c.",
+        "Δτ = (1000 m × 1,48 × 0,01) / (3×10⁸ m/s) = 14,8 / (3×10⁸) s.",
+        "Δτ ≈ 4,93×10⁻⁸ s ≈ 49,3 ns."
+      ]
+    },
+    {
+      "type": "calc",
+      "prompt": "Un enlace de 1 km tiene un ensanchamiento de pulso Δτ = 49,3 ns. Con el criterio B_max = 1 / (2·Δτ), ¿qué tasa de datos máxima admite?",
+      "unit": "Mb/s",
+      "answer": 10.14198783,
+      "decimals": 1,
+      "hint": "Convierte 49,3 ns a segundos: 49,3×10⁻⁹ s.",
+      "solution": [
+        "B_max = 1 / (2·Δτ).",
+        "B_max = 1 / (2 × 49,3×10⁻⁹ s) ≈ 1,014×10⁷ bit/s.",
+        "B_max ≈ 10,1 Mb/s en 1 km, un valor muy bajo para los sistemas actuales."
+      ]
+    },
+    {
+      "type": "calc",
+      "prompt": "Si la misma fibra (1 km, n₁ = 1,48, Δ = 1 %) tuviera un perfil gradual parabólico, el ensanchamiento sería Δτ = L·n₁·Δ² / (8c). ¿Cuánto vale?",
+      "unit": "ps",
+      "answer": 61.66666667,
+      "decimals": 1,
+      "tolerancePercent": 3,
+      "hint": "Δ² = 0,0001. El resultado sale en el orden de decenas de ps.",
+      "solution": [
+        "Δτ = L·n₁·Δ² / (8c).",
+        "Δτ = (1000 × 1,48 × 0,01²) / (8 × 3×10⁸) = 0,148 / (2,4×10⁹) s.",
+        "Δτ ≈ 6,17×10⁻¹¹ s ≈ 61,7 ps."
+      ]
+    },
+    {
+      "type": "calc",
+      "prompt": "¿Cuántas veces menor es el ensanchamiento del perfil gradual (61,7 ps) que el del perfil escalonado (49,3 ns) en 1 km?",
+      "unit": "veces",
+      "answer": 800,
+      "decimals": 0,
+      "hint": "Divide 49,3 ns entre 61,7 ps (cuidado con las unidades: 1 ns = 1000 ps).",
+      "solution": [
+        "Razón = 49,3 ns / 61,7 ps = 49 300 ps / 61,7 ps.",
+        "Razón ≈ 799 ≈ 800.",
+        "Coincide con 8/Δ = 8 / 0,01 = 800: cuanto menor es Δ, mayor es la mejora del perfil gradual."
+      ]
+    }
+  ]
+}

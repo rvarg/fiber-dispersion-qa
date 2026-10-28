@@ -1,0 +1,83 @@
+{
+  "_ayuda": [
+    "PLANTILLA. Este archivo NO se carga en la app (su nombre no sigue el patrón sesion-NN.json).",
+    "Para crear o reemplazar un tema: copia este archivo como sesion-NN.json (NN = 01 ... 10) y edítalo.",
+    "Máximo 10 temas (sesiones) y 10 preguntas por tema.",
+    "Tipos de pregunta: 'mcq' (opción múltiple, es el tipo por defecto) y 'calc' (cálculo numérico).",
+    "mcq: 2 a 6 opciones; correctOptionId debe coincidir con el id de una de ellas.",
+    "calc: 'answer' es un NÚMERO (sin comillas); 'tolerancePercent' (por defecto 2) o 'toleranceAbs' definen cuánto error se acepta; 'solution' es la lista de pasos que se muestra después de responder.",
+    "Campos opcionales en ambos tipos: id, image, explanation, reference (p. ej. 'Keiser, sec. 3.1, p. 105' — verifica la página en tu libro).",
+    "Imagen: 'url' puede ser https://... (necesita internet) o una ruta local como 'img/mi-figura.png' (archivo en public/img/).",
+    "Después de editar, revisa los archivos con:  npm run validate"
+  ],
+  "title": "Título del tema",
+  "description": "Descripción breve que se muestra bajo el título en la lista.",
+  "shuffleQuestions": true,
+  "questions": [
+    {
+      "type": "mcq",
+      "prompt": "Enunciado de una pregunta de opción múltiple.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Primera opción"
+        },
+        {
+          "id": "b",
+          "text": "Segunda opción"
+        },
+        {
+          "id": "c",
+          "text": "Tercera opción"
+        },
+        {
+          "id": "d",
+          "text": "Cuarta opción"
+        }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Explicación que se muestra después de responder (opcional pero recomendada).",
+      "reference": "Libro, sección y página (opcional)"
+    },
+    {
+      "type": "calc",
+      "prompt": "Una fibra tiene D = 17 ps/(nm·km). Una fuente con ancho espectral Δλ = 0,1 nm transmite por 80 km. ¿Cuál es el ensanchamiento Δτ = D·L·Δλ?",
+      "unit": "ps",
+      "answer": 136,
+      "decimals": 0,
+      "tolerancePercent": 2,
+      "hint": "Pista opcional que el estudiante puede mostrar antes de responder.",
+      "solution": [
+        "Paso 1: planteamiento de la fórmula Δτ = D·L·Δλ.",
+        "Paso 2: sustitución de valores.",
+        "Paso 3: resultado con su unidad."
+      ],
+      "explanation": "Comentario final opcional."
+    },
+    {
+      "id": "id-opcional-unico-en-el-tema",
+      "prompt": "Enunciado de una pregunta que incluye una imagen.",
+      "image": {
+        "url": "img/pulso-ensanchamiento.svg",
+        "alt": "Texto alternativo: describe la imagen para quien no pueda verla",
+        "caption": "Pie de figura opcional, p. ej. la fuente de la imagen."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Opción A"
+        },
+        {
+          "id": "b",
+          "text": "Opción B"
+        },
+        {
+          "id": "c",
+          "text": "Opción C"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Explicación de la respuesta correcta."
+    }
+  ]
+}

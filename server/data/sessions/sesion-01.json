@@ -1,0 +1,140 @@
+{
+  "title": "La dispersión y sus consecuencias",
+  "description": "Qué es, por qué limita la tasa de datos y en qué unidades se mide.",
+  "shuffleQuestions": true,
+  "questions": [
+    {
+      "prompt": "¿Qué es la dispersión (distorsión de la señal) en una fibra óptica?",
+      "options": [
+        {
+          "id": "a",
+          "text": "El ensanchamiento de los pulsos al propagarse, porque las distintas componentes de la señal viajan con retardos diferentes"
+        },
+        {
+          "id": "b",
+          "text": "La pérdida de potencia óptica a lo largo de la fibra"
+        },
+        {
+          "id": "c",
+          "text": "La reflexión parcial de la luz en los conectores"
+        },
+        {
+          "id": "d",
+          "text": "El cambio de color de la luz por absorción"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Cada componente de la señal (modo, longitud de onda o polarización) tarda un tiempo distinto en llegar al final, de modo que el pulso se hace más ancho en el tiempo. Perder potencia es atenuación, un fenómeno distinto."
+    },
+    {
+      "prompt": "En el esquema, los pulsos de salida son más anchos que los de entrada y se solapan. ¿Qué problema produce esto en el receptor?",
+      "image": {
+        "url": "img/pulso-ensanchamiento.svg",
+        "alt": "Dos gráficas de potencia contra tiempo para la secuencia de bits 1, 0, 1, 1, 0, 1. Arriba, a la entrada, pulsos estrechos y separados. Abajo, a la salida, pulsos anchos que se solapan y elevan el nivel de los bits 0 que están entre dos bits 1, por encima del umbral de decisión",
+        "caption": "Ensanchamiento de pulsos por dispersión: entrada (arriba) y salida tras recorrer la fibra (abajo). Esquema cualitativo, ilustración propia."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Interferencia entre símbolos (ISI): un bit 0 puede leerse como 1 y aparecen errores"
+        },
+        {
+          "id": "b",
+          "text": "Aumenta la potencia óptica total recibida"
+        },
+        {
+          "id": "c",
+          "text": "Disminuye el índice de refracción del núcleo"
+        },
+        {
+          "id": "d",
+          "text": "Aparece absorción por iones OH⁻"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Cuando el ensanchamiento es comparable al período de bit, la energía de un pulso invade el intervalo de los vecinos. El nivel de un 0 entre dos 1 sube por encima del umbral de decisión y el receptor se equivoca."
+    },
+    {
+      "prompt": "¿Cómo afecta la dispersión a la capacidad de un enlace?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Limita la tasa de datos (o el ancho de banda) máxima que se puede transmitir para una longitud dada"
+        },
+        {
+          "id": "b",
+          "text": "Solo reduce la potencia, no afecta la tasa de datos"
+        },
+        {
+          "id": "c",
+          "text": "Solo importa en enlaces menores de 1 km"
+        },
+        {
+          "id": "d",
+          "text": "Permite aumentar la tasa de datos al ensanchar los pulsos"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Cuanto mayor es el ensanchamiento, más separados deben estar los pulsos para no solaparse, es decir, menor debe ser la tasa de datos. Por eso suele hablarse del producto ancho de banda × longitud."
+    },
+    {
+      "prompt": "¿Cuál es la diferencia entre atenuación y dispersión?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La atenuación reduce la potencia de la señal; la dispersión ensancha los pulsos en el tiempo"
+        },
+        {
+          "id": "b",
+          "text": "La atenuación ensancha los pulsos; la dispersión reduce la potencia"
+        },
+        {
+          "id": "c",
+          "text": "Son el mismo fenómeno medido en unidades distintas"
+        },
+        {
+          "id": "d",
+          "text": "La atenuación solo ocurre en fibras monomodo y la dispersión solo en multimodo"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Un enlace puede tener potencia suficiente y aun así fallar por dispersión, o al revés. Por eso se calculan por separado el presupuesto de pérdidas y el presupuesto de dispersión (tiempo)."
+    },
+    {
+      "prompt": "¿En qué unidades se expresa habitualmente el coeficiente de dispersión cromática D?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ps/(nm·km)"
+        },
+        {
+          "id": "b",
+          "text": "dB/km"
+        },
+        {
+          "id": "c",
+          "text": "ps/√km"
+        },
+        {
+          "id": "d",
+          "text": "GHz·km"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "D indica cuántos picosegundos se ensancha el pulso por cada nanómetro de ancho espectral de la fuente y por cada kilómetro de fibra. ps/√km corresponde al coeficiente de PMD, y GHz·km al producto ancho de banda–longitud."
+    },
+    {
+      "type": "calc",
+      "prompt": "Una fibra multimodo tiene un producto ancho de banda–longitud de 500 MHz·km. Suponiendo que el ancho de banda es inversamente proporcional a la longitud, ¿qué ancho de banda ofrece un enlace de 2 km?",
+      "unit": "MHz",
+      "answer": 250,
+      "decimals": 0,
+      "hint": "Ancho de banda = (producto ancho de banda–longitud) / longitud.",
+      "solution": [
+        "Ancho de banda = (B·L) / L.",
+        "Ancho de banda = 500 MHz·km / 2 km = 250 MHz.",
+        "Al duplicar la longitud, el ancho de banda utilizable se reduce a la mitad."
+      ]
+    }
+  ]
+}

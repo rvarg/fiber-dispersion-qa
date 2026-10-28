@@ -1,0 +1,209 @@
+{
+  "title": "Dispersión cromática",
+  "description": "Dispersión de material y de guía de onda; coeficiente D.",
+  "shuffleQuestions": true,
+  "questions": [
+    {
+      "prompt": "¿Qué tienen en común todas las componentes de la dispersión cromática?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Dependen de la longitud de onda: las distintas λ de la fuente viajan con distinta velocidad de grupo"
+        },
+        {
+          "id": "b",
+          "text": "Dependen de cuántos modos propaga la fibra"
+        },
+        {
+          "id": "c",
+          "text": "Dependen de la polarización de la luz"
+        },
+        {
+          "id": "d",
+          "text": "Dependen de la potencia óptica inyectada"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Ninguna fuente es perfectamente monocromática. Como cada longitud de onda tarda un tiempo distinto en recorrer la fibra, un pulso con ancho espectral Δλ se ensancha. También se llama dispersión intramodal."
+    },
+    {
+      "prompt": "La dispersión de material se debe a:",
+      "options": [
+        {
+          "id": "a",
+          "text": "La variación del índice de refracción del vidrio con la longitud de onda"
+        },
+        {
+          "id": "b",
+          "text": "Las diferencias de camino entre modos"
+        },
+        {
+          "id": "c",
+          "text": "La birrefringencia del núcleo"
+        },
+        {
+          "id": "d",
+          "text": "Las microcurvaturas del cable"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Como n depende de λ, la velocidad de grupo también. Para el sílice puro el coeficiente de dispersión de material se anula cerca de 1270 nm."
+    },
+    {
+      "prompt": "La dispersión de guía de onda se debe a:",
+      "options": [
+        {
+          "id": "a",
+          "text": "Que la fracción de la potencia del modo que viaja por el núcleo y por el revestimiento depende de la longitud de onda"
+        },
+        {
+          "id": "b",
+          "text": "Que el vidrio absorbe más en ciertas longitudes de onda"
+        },
+        {
+          "id": "c",
+          "text": "Que los modos tienen distinto camino geométrico"
+        },
+        {
+          "id": "d",
+          "text": "Que la fuente tiene ruido de intensidad"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Parte de la luz de un modo viaja por el revestimiento, donde el índice es menor. Esa fracción cambia con λ y, con ella, la velocidad de grupo del modo."
+    },
+    {
+      "prompt": "En la gráfica, ¿cómo se llama la longitud de onda marcada con A, donde D = 0?",
+      "image": {
+        "url": "img/dispersion-cromatica.svg",
+        "alt": "Gráfica del coeficiente de dispersión cromática D frente a la longitud de onda de 1200 a 1650 nanómetros. La curva crece, cruza el valor cero en el punto A cerca de 1310 nanómetros, y llega al punto B, cerca de 17 picosegundos por nanómetro y kilómetro, a 1550 nanómetros. El punto C está en la región de valores negativos, a longitudes de onda menores que A",
+        "caption": "Esquema del coeficiente de dispersión cromática de una fibra monomodo estándar, según el modelo D(λ) = (S₀/4)(λ − λ₀⁴/λ³) con λ₀ = 1310 nm y S₀ = 0,092 ps/(nm²·km). Ilustración propia."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Longitud de onda de dispersión nula (λ₀), cerca de 1310 nm en una fibra monomodo estándar"
+        },
+        {
+          "id": "b",
+          "text": "Longitud de onda de corte del modo"
+        },
+        {
+          "id": "c",
+          "text": "Longitud de onda del pico de agua"
+        },
+        {
+          "id": "d",
+          "text": "Longitud de onda de mínima atenuación"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "La suma de dispersión de material y de guía de onda se anula cerca de 1310 nm en la fibra estándar (ITU-T G.652). Allí el ensanchamiento cromático es mínimo, aunque la atenuación no es la menor."
+    },
+    {
+      "prompt": "Cerca de 1550 nm (punto B de la gráfica), una fibra monomodo estándar presenta aproximadamente:",
+      "image": {
+        "url": "img/dispersion-cromatica.svg",
+        "alt": "Gráfica del coeficiente de dispersión cromática D frente a la longitud de onda de 1200 a 1650 nanómetros. La curva crece, cruza el valor cero en el punto A cerca de 1310 nanómetros, y llega al punto B, cerca de 17 picosegundos por nanómetro y kilómetro, a 1550 nanómetros. El punto C está en la región de valores negativos, a longitudes de onda menores que A",
+        "caption": "Esquema del coeficiente de dispersión cromática de una fibra monomodo estándar, según el modelo D(λ) = (S₀/4)(λ − λ₀⁴/λ³) con λ₀ = 1310 nm y S₀ = 0,092 ps/(nm²·km). Ilustración propia."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "D ≈ +17 ps/(nm·km)"
+        },
+        {
+          "id": "b",
+          "text": "D ≈ 0"
+        },
+        {
+          "id": "c",
+          "text": "D ≈ −17 ps/(nm·km)"
+        },
+        {
+          "id": "d",
+          "text": "D ≈ +170 ps/(nm·km)"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "En 1550 nm la fibra estándar tiene unos 17 ps/(nm·km): la ventana de mínima atenuación coincide con una dispersión cromática notable, lo que obliga a controlarla en enlaces de alta velocidad."
+    },
+    {
+      "prompt": "La región marcada con C (D < 0, a longitudes de onda menores que λ₀) corresponde al régimen de:",
+      "image": {
+        "url": "img/dispersion-cromatica.svg",
+        "alt": "Gráfica del coeficiente de dispersión cromática D frente a la longitud de onda de 1200 a 1650 nanómetros. La curva crece, cruza el valor cero en el punto A cerca de 1310 nanómetros, y llega al punto B, cerca de 17 picosegundos por nanómetro y kilómetro, a 1550 nanómetros. El punto C está en la región de valores negativos, a longitudes de onda menores que A",
+        "caption": "Esquema del coeficiente de dispersión cromática de una fibra monomodo estándar, según el modelo D(λ) = (S₀/4)(λ − λ₀⁴/λ³) con λ₀ = 1310 nm y S₀ = 0,092 ps/(nm²·km). Ilustración propia."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "Dispersión normal"
+        },
+        {
+          "id": "b",
+          "text": "Dispersión anómala"
+        },
+        {
+          "id": "c",
+          "text": "Dispersión nula"
+        },
+        {
+          "id": "d",
+          "text": "Dispersión de modo de polarización"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Con D < 0 (por debajo de λ₀) se habla de régimen normal; con D > 0 (por encima de λ₀, como en 1550 nm), de régimen anómalo. El signo importa al combinar fibras con dispersión opuesta para compensarla."
+    },
+    {
+      "prompt": "¿Por qué reducir el ancho espectral de la fuente reduce el ensanchamiento cromático?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Porque el ensanchamiento es proporcional a Δλ: hay menos diferencia entre las velocidades de las componentes espectrales"
+        },
+        {
+          "id": "b",
+          "text": "Porque la fibra absorbe las longitudes de onda extremas"
+        },
+        {
+          "id": "c",
+          "text": "Porque disminuye el número de modos propagados"
+        },
+        {
+          "id": "d",
+          "text": "Porque aumenta la longitud de onda central"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Δτ = D·L·Δλ. Un LED (decenas de nm) produce un ensanchamiento muy superior al de un láser monomodo (fracciones de nm) en la misma fibra."
+    },
+    {
+      "type": "calc",
+      "prompt": "Una fibra monomodo estándar tiene D = 17 ps/(nm·km) a 1550 nm. Un láser con ancho espectral Δλ = 0,1 nm transmite por 80 km. Calcula el ensanchamiento Δτ = D·L·Δλ.",
+      "unit": "ps",
+      "answer": 136,
+      "decimals": 0,
+      "hint": "Multiplica D × L × Δλ y verifica que quedan ps.",
+      "solution": [
+        "Δτ = D·L·Δλ.",
+        "Δτ = 17 ps/(nm·km) × 80 km × 0,1 nm.",
+        "Δτ = 136 ps."
+      ]
+    },
+    {
+      "type": "calc",
+      "prompt": "Un LED con ancho espectral Δλ = 40 nm transmite por 10 km de la misma fibra (D = 17 ps/(nm·km)). ¿Cuál es el ensanchamiento cromático?",
+      "unit": "ns",
+      "answer": 6.8,
+      "decimals": 1,
+      "hint": "Δτ = D·L·Δλ; al final convierte ps a ns (1 ns = 1000 ps).",
+      "solution": [
+        "Δτ = D·L·Δλ = 17 × 10 × 40 ps = 6800 ps.",
+        "Δτ = 6,8 ns.",
+        "Es 50 veces mayor que el del láser del problema anterior en solo 10 km, por la anchura espectral de la fuente."
+      ]
+    }
+  ]
+}

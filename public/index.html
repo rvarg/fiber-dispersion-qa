@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>Dispersión en Fibra</title>
+<meta name="theme-color" content="#0B2A4A" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div id="app">
+
+  <!-- Encabezado: los textos se leen de server/data/app.json al cargar.
+       Lo que está aquí es solo el valor de respaldo. -->
+  <header class="hero">
+    <svg class="hero__signal" viewBox="0 0 400 40" preserveAspectRatio="none" aria-hidden="true">
+      <polyline points="0,20 40,20 55,6 70,34 85,6 100,34 115,20 400,20" />
+    </svg>
+    <div class="hero__content">
+      <p class="hero__eyebrow" id="hero-eyebrow">Telecomunicaciones: fibra óptica</p>
+      <h1 class="hero__title" id="hero-title">Dispersión en Fibra</h1>
+      <p class="hero__subtitle" id="hero-subtitle">Causas de la dispersión y cálculos de ensanchamiento y tasa de datos: preguntas y problemas numéricos.</p>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Pantalla: lista de sesiones -->
+    <section id="screen-sessions" class="screen">
+      <p class="section-label" id="sessions-label">Elige un tema</p>
+      <div id="session-list" class="session-list" role="list"></div>
+    </section>
+
+    <!-- Pantalla: pregunta -->
+    <section id="screen-quiz" class="screen hidden">
+      <div class="quiz-topbar">
+        <button id="btn-back" class="btn-ghost">← Temas</button>
+        <div class="score-pill" id="progress-pill">Pregunta 0 de 0</div>
+      </div>
+
+      <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
+      <div class="question-card" id="question-card">
+        <div class="question-card__meta">
+          <span class="tag" id="q-session-tag">Sesión</span>
+          <span class="tag tag--muted" id="q-type-tag">Opción múltiple</span>
+        </div>
+        <p class="question-card__prompt" id="q-prompt">Cargando pregunta…</p>
+
+        <figure class="question-figure hidden" id="q-figure">
+          <button type="button" class="question-figure__btn" id="q-figure-btn" aria-label="Ampliar imagen">
+            <img id="q-image" alt="" />
+          </button>
+          <figcaption id="q-caption" class="question-figure__caption"></figcaption>
+        </figure>
+
+        <div id="mcq-options" class="options-list"></div>
+
+        <!-- Pregunta de cálculo: respuesta numérica -->
+        <div id="calc-answer" class="calc-answer hidden">
+          <label class="calc-answer__label" for="calc-input">Tu respuesta</label>
+          <div class="calc-answer__row">
+            <input id="calc-input" class="calc-answer__input" type="text" inputmode="decimal"
+                   autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Escribe un número" />
+            <span id="calc-unit" class="calc-answer__unit"></span>
+          </div>
+          <p id="calc-error" class="calc-answer__error hidden" role="alert"></p>
+          <button type="button" id="btn-hint" class="btn-ghost calc-answer__hint-btn">Ver pista</button>
+          <p id="calc-hint" class="calc-answer__hint hidden"></p>
+          <button type="button" id="btn-check" class="btn-primary">Comprobar</button>
+        </div>
+
+        <div id="feedback" class="feedback hidden"></div>
+      </div>
+
+      <button id="btn-next" class="btn-primary btn-next hidden">Siguiente pregunta →</button>
+    </section>
+
+    <!-- Pantalla: fin de la sesión -->
+    <section id="screen-complete" class="screen hidden">
+      <div class="complete-box">
+        <p class="complete-box__title">¡Completaste el tema!</p>
+        <p class="complete-box__score" id="complete-score">0 de 0 correctas</p>
+        <p class="complete-box__topic" id="complete-session"></p>
+        <button id="btn-next-session" class="btn-primary btn-next-session hidden">Siguiente tema →</button>
+        <button id="btn-repeat" class="btn-secondary">Repetir este tema</button>
+        <button id="btn-complete-back" class="btn-ghost btn-ghost--block">Elegir otro tema</button>
+      </div>
+    </section>
+
+    <!-- Estado de error de conexión -->
+    <section id="screen-error" class="screen hidden">
+      <div class="error-box">
+        <p class="error-box__title" id="error-title">No se pudo cargar el contenido</p>
+        <p class="error-box__desc" id="error-desc">Verifica tu conexión y que la dirección del servidor configurada en <code>config.js</code> sea correcta.</p>
+        <button id="btn-retry" class="btn-primary">Reintentar</button>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- Imagen ampliada (toca en cualquier parte para cerrar) -->
+<div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+  <img id="lightbox-img" alt="" />
+  <p class="lightbox__hint">Toca para cerrar</p>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

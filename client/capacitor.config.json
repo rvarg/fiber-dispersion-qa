@@ -1,0 +1,12 @@
+{
+  "appId": "ec.espol.fiberdispersionqa",
+  "appName": "Dispersión en Fibra",
+  "webDir": "../public",
+  "server": {
+    "androidScheme": "https",
+    "cleartext": true
+  },
+  "android": {
+    "allowMixedContent": true
+  }
+}
